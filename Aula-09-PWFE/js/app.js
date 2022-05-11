@@ -106,7 +106,7 @@ const maskCelular = ({target}) => {
   let text = target.value
 
   text = text.replace(/[^0-9]/,'')
-  text = text.replace(/(.{2})(.{5})(.{4})/,'($1) $2-$3')
+  text = text.replace"^\((0-9){2}\}) ?[0-9]{5}-?[0-9]{4}$"
   text = text.replace(/(.{7})(.)/,'$1-$2')
 
   target.value = text
