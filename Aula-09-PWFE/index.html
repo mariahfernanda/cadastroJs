@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/button.css">
     <link rel="stylesheet" href="./css/records.css">
     <link rel="stylesheet" href="./css/modal.css">
-    <script src="./js/app.js" type="module" defer></script>
+    <script src="./js/app.js" defer type="module"></script>
     <title>CRUD</title>
 </head>
 <body>
@@ -29,8 +29,8 @@
                     <th>Ação</th>
                 </tr>
             </thead>
-            <tbody id="clientsInfo">
-
+            <tbody id="clientes-container">
+               
             </tbody>
         </table>
         <div class="modal" id="modal">
@@ -40,10 +40,19 @@
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
                 <form class="modal-form" id="modal-form">
-                    <input type="text" class="modal-field" placeholder="Nome do Cliente" id="txtNome">
-                    <input type="email" class="modal-field" placeholder="E-mail do Cliente" id="txtEmail">
-                    <input type="text" class="modal-field" placeholder="Celular do Cliente" id="txtCelular">
-                    <input type="text" class="modal-field" placeholder="Cidade do Cliente" id="txtCidade">
+                    <div class="modal-from" id="modal-from">
+                        <div class="model-image-container">
+                            <input type="file" id="modal-image-input" accept="image/">
+                            <label for="modal-image-input" id="madal-image-label">SENAI</label>
+                            <img src="./img/add.png" alt="foto do cliente" id="modal-image">
+                        </div>
+                    </div>
+                    <div class="modal-field-container">
+                        <input type="text" class="modal-field" placeholder="Nome do Cliente" id="nome">
+                        <input type="email" class="modal-field" placeholder="e-mail do Cliente" id="email">
+                        <input type="text" class="modal-field" placeholder="Celular do Cliente" id="celular">
+                        <input type="text" class="modal-field" placeholder="Cidade do Cliente" id="cidade">
+                    </div>
                 </form>
                 <footer class="modal-footer">
                     <button class="button green" id="salvar">Salvar</button>
@@ -53,7 +62,7 @@
         </div>
     </main>
     <footer>
-        Copyright &copy; Thales Santos
+        Copyright &copy; 
     </footer>
 </body>
 </html>

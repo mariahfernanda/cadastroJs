@@ -1,18 +1,24 @@
 'use strict'
 
+import { imagePreview } from "./imagePreview"
+
 const openModal = () => document.getElementById('modal').classList.add('active')
 
 const closeModal = () => {
-    document.getElementById('modal').classList.remove('active');
-    
-    // Limpando os dados
-    document.getElementById('modal-form').reset() // Limpa todos os campos de um formulário
-    document.getElementById('txtNome').removeAttribute('data-client-id')
-}
+    document.getElementById('modal').classList.remove('active')
+    document.getElementById('modal-form').reset()
+    document.getElementById('nome').removeAttribute('data-id')
+    }
+
+const loadImage = () => imagePreview('modal-image-input', 'modal-image')
 
 document.getElementById('modalClose').addEventListener('click', closeModal)
 
 document.getElementById('cancelar').addEventListener('click', closeModal)
 
-// Export 
-export { openModal, closeModal }
+document.getElementById('modal-image-input').addEventListener('change', loadImage)
+
+export{
+    openModal,
+    closeModal
+}
